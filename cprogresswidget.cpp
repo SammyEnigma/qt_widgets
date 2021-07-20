@@ -180,25 +180,10 @@ void CProgressWidget::setComplete( const int result ) {
   if( ReturnCode::SUCCESS == result ) {
     ui->progressBar->setStyleSheet( CProgressWidget::defaultStyle() );
     _addlCaption = QStringLiteral( "Complete" );
-<<<<<<< HEAD
   }
   else if( result & ReturnCode::PROCESSING_INTERRUPTED ) {
     ui->progressBar->setStyleSheet( CProgressWidget::terminatedStyle() );
     _addlCaption = QStringLiteral( "Terminated" );
-=======
-  }
-  else if( result & ReturnCode::PROCESSING_INTERRUPTED ) {
-    ui->progressBar->setStyleSheet( CProgressWidget::terminatedStyle() );
-    _addlCaption = QStringLiteral( "Terminated" );
-  }
-  else {
-    ui->progressBar->setStyleSheet( CProgressWidget::errorStyle() );
-    _addlCaption = QStringLiteral( "Complete with errors" );
-  }
-
-  if( 0 == ui->progressBar->value() ) {
-    ui->progressBar->setMaximum(1);
->>>>>>> 12aebdfc87d8ae55964d95462a9c34352ab3d41b
   }
   else {
     ui->progressBar->setStyleSheet( CProgressWidget::errorStyle() );
@@ -208,9 +193,5 @@ void CProgressWidget::setComplete( const int result ) {
   ui->progressBar->setMaximum(1);
   ui->progressBar->setValue(1);
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 12aebdfc87d8ae55964d95462a9c34352ab3d41b
   setCaption();
 }
